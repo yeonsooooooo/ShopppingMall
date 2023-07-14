@@ -1,0 +1,35 @@
+*{
+  box-sizing: border-box;
+}
+
+.container{
+  background: red;
+  padding: 30px;
+  
+}
+
+.contents{
+  color: white;
+}
+
+.contents::after{
+  content: "저는 PC입니다.";
+}
+
+@media screen and (max-weight: 1000px){
+  .container{
+    background: blue;
+  }
+  .container::after{
+    content:"저는 모바일입니다."
+  }
+}
+
+@media screen and (min-width: 1001px) and (max-weight: 1064px){
+  .container{
+    background: green;
+  }
+  .container::after{
+    content:"저는 태블릿입니다."
+  }
+}
