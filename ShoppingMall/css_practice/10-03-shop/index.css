@@ -18,7 +18,7 @@ a {
 .mainBanner {
   width: 100%;
   height: 280px;
-  background-image: url("./img/banner.jpg");
+  background-image: url("../img/banner.jpg");
   background-size: cover;
   display: flex;
   flex-direction: row;
@@ -88,6 +88,8 @@ a {
   display: block;
 }
 
+/* a, ul, li 태그들이 모두 inline 요소이기 때문에 겹쳐져서 보이게 된다 */
+/* 따라서 block 요소로 바꿔주어야 한다. */
 .mainMenu ul li a {
   display: block;
   padding: 10px;
@@ -96,6 +98,7 @@ a {
   transition: all 0.3s ease-in-out;
 }
 
+/* transition에 all주는 이유는 속성이 2개씩 다 적용해야해서 */
 .writeBtnBox {
   margin-top: 10px;
 }
@@ -112,6 +115,8 @@ a {
   cursor: pointer;
 }
 
+/* 인라인 요소는 translateX 속성이 적용 안된다
+따라서 inline-block 요소로 바꾸어 주었다. */
 .writeBtn .arrow {
   display: inline-block;
   padding-left: 10px;
@@ -215,6 +220,9 @@ a {
   transition: all 0.4s ease-in-out 0.15s;
 }
 
+/* 반응형 웹으로 만들어 주는 곳
+breakpoint mobile: ~767, Tablet: 768~1023, PC: 1024~ */
+
 @media screen and (max-width: 767px) {
   /* mobile */
   .mainBanner {
@@ -253,6 +261,7 @@ a {
     padding: 12px 10px;
   }
 
+  /* 상품등록 버튼을 안보이게 해주기 위한 코드 */
   .writeBtnBox {
     display: none;
   }
@@ -280,7 +289,7 @@ a {
   }
 
   .textBox {
-    width: 100%;
+    width: 100%; 
     height: auto;
     position: relative;
     padding: 5px 15px 12px;
@@ -345,6 +354,7 @@ a {
   }
 }
 
+/* hover가 들어간 속성은 다 아래로 이동시킨다. */
 @media screen and (min-width: 1024px) {
   .mainMenu ul li a:hover {
     padding-left: 20px;
